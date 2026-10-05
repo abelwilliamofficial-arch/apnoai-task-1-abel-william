@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroDayStudent | Abel William</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Dark mode styles (bonus +10 XP). Works on top of style.css -->
+    <style>
+        .theme-btn {
+            font: inherit;
+            cursor: pointer;
+            background: transparent;
+            color: inherit;
+            border: 1px solid currentColor;
+            border-radius: 6px;
+            padding: 4px 12px;
+        }
+        @media (max-width: 480px) { .theme-btn { font-size: 0.8rem; padding: 2px 10px; } }
+        html[data-theme="dark"] body { background: #0f1720; color: #e6edf3; }
+        html[data-theme="dark"] .navbar { background: #0b1117; }
+        html[data-theme="dark"] .navbar a { color: #e6edf3; }
+        html[data-theme="dark"] .container { background: #0f1720; color: #e6edf3; }
+        html[data-theme="dark"] .alt-bg { background: #151f2a; }
+        html[data-theme="dark"] .container h2,
+        html[data-theme="dark"] .service-card h3 { color: #5eead4; }
+        html[data-theme="dark"] .service-card {
+            background: #1b2735;
+            color: #e6edf3;
+            border-color: #2a3a4c;
+        }
+        html[data-theme="dark"] footer { background: #0b1117; color: #9aa9b8; }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">ZeroDayStudent</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch between light and dark mode">Dark mode</button></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <header id="home" class="hero">
+        <h1>Day Zero of My Cybersecurity Journey</h1>
+        <p>I'm a student learning to think like a security pro, one skill at a time.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hi, I'm Abel William, the student behind ZeroDayStudent. I'm interested in cybersecurity and web development, and I practice on Linux using tools like Kali.</p>
+        <p>I'm learning how networks, websites and security tools work. My goal is to build a career in ethical hacking and secure software.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container alt-bg">
+        <h2>What I'm Learning</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Networking Basics</h3>
+                <p>Understanding DNS, IP addresses and how the internet connects devices.</p>
+            </div>
+            <div class="service-card">
+                <h3>Linux &amp; Security Tools</h3>
+                <p>Hands-on practice with Kali Linux and common security tools in safe, legal lab setups.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Development</h3>
+                <p>Building and deploying simple, responsive websites with HTML, CSS and Vercel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>Email: abelwilliamofficial@gmail.com</p>
+        <p>Phone: Available on request</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Abel William. Built for ApnoAI Internship Task 1.</p>
+    </footer>
+
+    <script>
+        // Dark-mode toggle: remembers the visitor's choice
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        var saved = null;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        var startDark = saved ? saved === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        function applyTheme(dark) {
+            root.setAttribute('data-theme', dark ? 'dark' : 'light');
+            btn.textContent = dark ? 'Light mode' : 'Dark mode';
+        }
+        applyTheme(startDark);
+
+        btn.addEventListener('click', function () {
+            var dark = root.getAttribute('data-theme') !== 'dark';
+            applyTheme(dark);
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+        });
+    </script>
+</body>
+</html>
