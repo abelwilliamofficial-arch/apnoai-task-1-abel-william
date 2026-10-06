@@ -141,6 +141,54 @@ footer {
     padding: 2rem;
 }
 
+/* About polish */
+.lead {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #0f766e;
+}
+
+.chips {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.75rem;
+}
+
+.chips li {
+    background: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #99d5cf;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Services polish */
+.service-card {
+    border-top: 4px solid #14b8a6;
+}
+
+.card-num {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #0f766e;
+    margin-bottom: 0.5rem;
+}
+
+.service-card .card-tags {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(100, 116, 139, 0.25);
+}
+
 /* Mobile Responsive (Media Queries) */
 @media (max-width: 768px) {
     .nav-links {
